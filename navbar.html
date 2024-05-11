@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+
+    <style>
+        .navbar {
+            background-color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 { grid-area: 1 / 1 / 2 / 3; }
+        .div2 { grid-area: 1 / 5 / 2 / 6; }
+        .div3 { grid-area: 1 / 6 / 2 / 7; }
+        .div4 { grid-area: 1 / 7 / 2 / 8; }
+        .div5 { grid-area: 1 / 8 / 2 / 9; }
+
+        body { background-color: navy; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+        a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
+        a:hover {border-bottom: 2px solid;}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="div1">Palo Alto Web Designs</div>
+        <div class="div2"><a href="#">Home</a></div>
+        <div class="div3"><a href="#">About</a></div>
+        <div class="div4"><a href="#">Pricing</a></div>
+        <div class="div5"><a href="#">Portfolio</a></div>
+    </div> 
+</body>
+</html>

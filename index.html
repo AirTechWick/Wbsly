@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
-
+    <title>Components</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <style>
-        .navbar {
-            background-color: white;
-            padding: 20px;
-            font-size: 1.2rem;
+        .parent {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
         }
 
-        .div1 { grid-area: 1 / 1 / 2 / 3; }
-        .div2 { grid-area: 1 / 5 / 2 / 6; }
-        .div3 { grid-area: 1 / 6 / 2 / 7; }
-        .div4 { grid-area: 1 / 7 / 2 / 8; }
-        .div5 { grid-area: 1 / 8 / 2 / 9; }
+        .div1 { grid-area: 1 / 1 / 2 / 6; }
+        .div2 { grid-area: 2 / 2 / 4 / 3; }
+        .div3 { grid-area: 2 / 3 / 4 / 4; }
+        .div4 { grid-area: 2 / 4 / 4 / 5; }
+        .div5 { grid-area: 4 / 2 / 6 / 3; }
+        .div6 { grid-area: 4 / 3 / 6 / 4; }
+        .div7 { grid-area: 4 / 4 / 6 / 5; }
+        .div8 { grid-area: 6 / 2 / 8 / 3; }
+        .div9 { grid-area: 6 / 3 / 8 / 4; }
+        .div10 { grid-area: 6 / 4 / 8 / 5; }
 
-        body { background-color: navy; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif;}
-
-        a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
-        a:hover {border-bottom: 2px solid;}
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="div1">Palo Alto Web Designs</div>
-        <div class="div2"><a href="#">Home</a></div>
-        <div class="div3"><a href="#">About</a></div>
-        <div class="div4"><a href="#">Pricing</a></div>
-        <div class="div5"><a href="#">Portfolio</a></div>
+    <div class="parent">
+        <div class="div1">Components</div>
+        <div class="div2"><a href="navbar.html" target="_blank">Navigation Bar</a></div>
+        <div class="div3">Item </div>
+        <div class="div4">Item </div>
+        <div class="div5">Item </div>
+        <div class="div6">Item </div>
+        <div class="div7">Item </div>
+        <div class="div8">Item </div>
+        <div class="div9">Item </div>
+        <div class="div10">Item</div>
     </div> 
 </body>
 </html>
