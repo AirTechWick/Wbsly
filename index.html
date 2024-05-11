@@ -17,6 +17,8 @@
             grid-row-gap: 10px;
         }
 
+        .parent > div { border: 3px solid white; border-radius: 10px; text-align: center; padding: 20px;}
+
         .div1 { grid-area: 1 / 1 / 2 / 6; }
         .div2 { grid-area: 2 / 2 / 4 / 3; }
         .div3 { grid-area: 2 / 3 / 4 / 4; }
@@ -28,11 +30,12 @@
         .div9 { grid-area: 6 / 3 / 8 / 4; }
         .div10 { grid-area: 6 / 4 / 8 / 5; }
 
+        #header {padding: 10px;}
     </style>
 </head>
 <body>
     <div class="parent">
-        <div class="div1">Components</div>
+        <h1 id="header" class="div1">Components</h1>
         <div class="div2"><a href="navbar.html" target="_blank">Navigation Bar</a></div>
         <div class="div3">Item </div>
         <div class="div4">Item </div>

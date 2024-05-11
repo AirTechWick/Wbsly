@@ -11,11 +11,15 @@
             padding: 20px;
             font-size: 1.2rem;
             display: grid;
-            grid-template-columns: repeat(4, 1fr) repeat(4, 0.5fr);
+            grid-template-columns: repeat(4, 1fr) repeat(4, 0.3fr);
             grid-template-rows: 1fr;
             grid-column-gap: 0px;
             grid-row-gap: 0px;
         }
+
+        .navbar > div { padding-left: 10px; padding-right: 10px;}
+
+        #header{ font-size: 1.25rem; }
 
         .div1 { grid-area: 1 / 1 / 2 / 3; }
         .div2 { grid-area: 1 / 5 / 2 / 6; }
@@ -23,20 +27,31 @@
         .div4 { grid-area: 1 / 7 / 2 / 8; }
         .div5 { grid-area: 1 / 8 / 2 / 9; }
 
+        #menu-icon { width: 1.5rem; display: none;}
 
         body { background-color: navy; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif;}
 
         a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
         a:hover {border-bottom: 2px solid;}
+
+        @media (max-width: 568px) {
+            .div2, .div3, .div4, .div5 {
+                display: none;
+            }
+
+            #menu-icon { display: inline-block;}
+        }
+
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="div1">Palo Alto Web Designs</div>
+        <div id="header" class="div1">Palo Alto Web Designs</div>
         <div class="div2"><a href="#">Home</a></div>
         <div class="div3"><a href="#">About</a></div>
         <div class="div4"><a href="#">Pricing</a></div>
         <div class="div5"><a href="#">Portfolio</a></div>
+        <svg id="menu-icon" class="div5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
     </div> 
 </body>
 </html>
