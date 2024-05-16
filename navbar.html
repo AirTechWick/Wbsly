@@ -16,22 +16,25 @@
             grid-column-gap: 0px;
             grid-row-gap: 0px;
             overflow: hidden;
+            margin: 0;
         }
 
-        .navbar > div { padding-left: 20px; padding-right: 20px; }
+        .navbar > li { padding-left: 20px; padding-right: 20px; }
 
-        .div1 { grid-area: 1 / 1 / 2 / 3; text-align: center;}
-        .div2 { grid-area: 1 / 5 / 2 / 6; }
-        .div3 { grid-area: 1 / 6 / 2 / 7; }
-        .div4 { grid-area: 1 / 7 / 2 / 8; }
-        .div5 { grid-area: 1 / 8 / 2 / 9; }
+        .item1 { grid-area: 1 / 1 / 2 / 3; text-align: center;}
+        .item2 { grid-area: 1 / 5 / 2 / 6; }
+        .item3 { grid-area: 1 / 6 / 2 / 7; }
+        .item4 { grid-area: 1 / 7 / 2 / 8; }
+        .item5 { grid-area: 1 / 8 / 2 / 9; }
 
-        .div2, .div3, .div4, .div5 {
+        .item2, .item3, .item4, .item5 {
                 display: flex;
                 align-items: center;
                 white-space: nowrap;
 
             }
+
+        ul { list-style-type: none; }
 
         #menu-icon { width: 1.5rem; display: none;}
 
@@ -44,7 +47,7 @@
 
         @media (max-width: 568px) {
 
-            .div2, .div3, .div4, .div5 {
+            .item2, .item3, .item4, .item5 {
                 display: none;
             }
 
@@ -54,13 +57,15 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="div1"><img id="logo" src="https://img.logoipsum.com/332.svg"></div>
-        <div class="div2"><a href="#">Home</a></div>
-        <div class="div3"><a href="#">About Us</a></div>
-        <div class="div4"><a href="#">Pricing Info</a></div>
-        <div class="div5"><a href="#">Portfolio</a></div>
-        <svg id="menu-icon" class="div5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-    </div> 
+    <nav>
+        <ul class="navbar">
+            <li class="item1"><img id="logo" src="https://img.logoipsum.com/332.svg"></li>
+            <li class="item2"><a href="#">Home</a></li>
+            <li class="item3"><a href="#">About Us</a></li>
+            <li class="item4"><a href="#">Pricing Info</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></li>
+            <li class="item5"><a href="#">Portfolio</a></li>
+            <svg id="menu-icon" class="item5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </ul>
+    </nav> 
 </body>
 </html>
