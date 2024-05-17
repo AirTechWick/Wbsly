@@ -46,13 +46,39 @@
         a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
         a:hover {border-bottom: 2px solid;}
 
+        .mobile-menu{
+            margin: 0;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            transform: translateX(-100%); /* Move the navbar off-screen initially */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            background-color: rgb(0, 69, 134);
+            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        }
+
+        .mobile-menu > li {
+            padding: 20px;
+        }
+
+        .mobile-menu > li > a {
+            color: white;
+        }
+
         @media (max-width: 568px) {
 
             .item2, .item3, .item4, .item5 {
                 display: none;
             }
+            
+            #menu-icon { display: inline-block;  cursor: pointer;}
 
-            #menu-icon { display: inline-block;}
+            .show-mobile-menu {
+                transform: translateX(0); /* Move the navbar into view */
+            }
+
         }
 
         .dropdown-menu { display: none;}
@@ -62,6 +88,7 @@
     </style>
 </head>
 <body>
+    <!-- Desktop Navigation Menu -->
     <nav>
         <ul class="navbar">
             <li class="item1"><img id="logo" src="https://img.logoipsum.com/332.svg"></li>
@@ -75,10 +102,18 @@
                 </ul>
             </li>
             <li class="item5"><a href="#">Portfolio</a></li>
-            <svg id="menu-icon" class="item5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            <svg id="menu-icon" class="item5 btn not-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
         </ul>
     </nav> 
 
+    <!-- Mobile Navigation Menu -->
+    <nav>
+        <ul class="mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pricing Info</a></li>
+        </ul>
+    </nav>
 
     <script>
         document.querySelector(".item4").addEventListener("mouseover", function(){
@@ -104,6 +139,31 @@
         function hideMenu () {
             document.querySelector(".dropdown-menu-show").className = "dropdown-menu"
         }
+
+        // Hamburger Icon Toggle
+
+        // Select the first element with the class 'btn'
+        var btn = document.querySelector('.btn');
+        var mobilemenu = document.querySelector('.mobile-menu');
+
+        btn.addEventListener('click', function() {
+            // Toggle the classes 'active' and 'not-active'
+            this.classList.toggle('active');
+            this.classList.toggle('not-active');
+            
+            if (this.classList.contains('active')) {
+                mobilemenu.classList.add('show-mobile-menu');
+
+            }
+
+            if (this.classList.contains('not-active')) {
+                mobilemenu.classList.remove('show-mobile-menu');
+            }
+
+
+        });
+
+        
     </script>
 </body>
 </html>
