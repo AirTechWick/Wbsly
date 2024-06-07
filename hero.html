@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        section#hero {
+            padding-top: 128px;
+            padding-bottom: 72px;
+            padding-left: 80px;
+            padding-right: 80px;
+            color: var(--color-pink-10, #43153A);
+            text-align: center;
+
+            /* Display 1 */
+            font-family: Verdana, sans-serif;
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        section#hero > p {
+            font-family: Inter; 
+            color: var(--color-text-text-secondary, #646269); 
+            font-size: 18px; 
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px; /* 155.556% */ 
+            max-width: 768px;
+            text-align: center; 
+            margin: 0 auto;
+            padding-bottom: 48px;
+        }
+
+        button {
+            border-radius: 40px;
+            border: 1px solid var(--color-border-border, #D1D1D1);
+            background: var(--color-bg-fill-fill, #FFF);
+            height: var(--space-1200, 48px);
+            padding: var(--space-300, 12px) var(--space-500, 20px); 
+            box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.685);
+        }
+    </style>
 </head>
 <body>
-    
+    <section id="hero">
+            <h2>Be Your Own Company</h2>
+            <p>Enjoy a unique work experience in an environment of efficiency and high energy as you immerse yourself in a world of oriental technology and business.</p>
+            <button>All services</button>
+            <button>Book Appointment</button>
+    </section>
 </body>
-</html>
+</html> 
+
