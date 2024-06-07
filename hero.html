@@ -36,12 +36,27 @@
         }
 
         button {
+            font-family: Inter; 
             border-radius: 40px;
             border: 1px solid var(--color-border-border, #D1D1D1);
             background: var(--color-bg-fill-fill, #FFF);
             height: var(--space-1200, 48px);
             padding: var(--space-300, 12px) var(--space-500, 20px); 
             box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.685);
+            transition-duration: 0.4s;
+        }
+
+        button:hover {
+            background-color: #a05e93;
+        }
+
+        #dark-button {
+            background-color: black;
+            color: white;
+        }
+
+        #dark-button:hover {
+            background-color: #a05e93;
         }
     </style>
 </head>
@@ -49,8 +64,8 @@
     <section id="hero">
             <h2>Be Your Own Company</h2>
             <p>Enjoy a unique work experience in an environment of efficiency and high energy as you immerse yourself in a world of oriental technology and business.</p>
-            <button>All services</button>
-            <button>Book Appointment</button>
+            <button>All Services</button>
+            <button id="dark-button">Book Appointment</button>
     </section>
 </body>
 </html> 
