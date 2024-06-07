@@ -14,6 +14,7 @@
             padding-right: 80px;
             color: var(--color-pink-10, #43153A);
             text-align: center;
+            background-color: rgb(255, 238, 218);
 
             /* Display 1 */
             font-family: Verdana, sans-serif;
@@ -45,6 +46,7 @@
             padding: var(--space-300, 12px) var(--space-500, 20px); 
             box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.685);
             transition-duration: 0.4s;
+            margin-bottom: 10px;
         }
 
         button:hover {
@@ -59,15 +61,180 @@
         #dark-button:hover {
             background-color: #a05e93;
         }
+
+
+        .navbar {
+            background-color: white;
+            padding: 20px;
+            font-size: 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) repeat(4, 0.3fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            margin: 0;
+        }
+
+        .navbar > li { padding-left: 20px; padding-right: 20px; }
+
+        .item1 { grid-area: 1 / 1 / 2 / 3; text-align: center;}
+        .item2 { grid-area: 1 / 5 / 2 / 6; }
+        .item3 { grid-area: 1 / 6 / 2 / 7; }
+        .item4 { grid-area: 1 / 7 / 2 / 8; }
+        .item5 { grid-area: 1 / 8 / 2 / 9; }
+
+        .item2, .item3, .item4, .item5 {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                position: relative;
+            }
+
+        ul { list-style-type: none; }
+
+        #menu-icon { width: 1.5rem; display: none;}
+
+        #dropdown-icon { width: 0.75rem; margin-left: 10px; vertical-align: bottom; }
+
+        #logo {width: 4rem; }
+
+        body { background-color: white; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+        a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
+        a:hover {border-bottom: 2px solid;}
+
+        .mobile-menu{
+            margin: 0;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            transform: translateX(-100%); /* Move the navbar off-screen initially */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            background-color: rgb(0, 69, 134);
+            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        }
+
+        .mobile-menu > li {
+            padding: 20px;
+        }
+
+        .mobile-menu > li > a {
+            color: white;
+        }
+
+        @media (max-width: 568px) {
+
+            .item2, .item3, .item4, .item5 {
+                display: none;
+            }
+            
+            #menu-icon { display: inline-block;  cursor: pointer;}
+
+            .show-mobile-menu {
+                transform: translateX(0); /* Move the navbar into view */
+            }
+
+        }
+
+        .dropdown-menu { display: none;}
+
+        .dropdown-menu-show { position: absolute; left: 15%; top: 100%; background-color: white; display: block; padding: 30px; line-height: 40px;}
+
+
     </style>
 </head>
 <body>
+    <!-- Desktop Navigation Menu -->
+    <nav>
+        <ul class="navbar">
+            <li class="item1"><img id="logo" src="https://img.logoipsum.com/332.svg"></li>
+            <li class="item2"><a href="#">Home</a></li>
+            <li class="item3"><a href="#">About Us</a></li>
+            <li class="item4"><a href="#">Pricing Info<svg id="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Portfolio Item 1</a></li>
+                    <li><a href="#">Priced Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                </ul>
+            </li>
+            <li class="item5"><a href="#">Portfolio</a></li>
+            <svg id="menu-icon" class="item5 btn not-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </ul>
+    </nav> 
+
+    <!-- Mobile Navigation Menu -->
+    <nav>
+        <ul class="mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pricing Info</a></li>
+        </ul>
+    </nav>
+
+
+
+    
     <section id="hero">
             <h2>Be Your Own Company</h2>
             <p>Enjoy a unique work experience in an environment of efficiency and high energy as you immerse yourself in a world of oriental technology and business.</p>
             <button>All Services</button>
             <button id="dark-button">Book Appointment</button>
     </section>
+
+
+    <script>
+        document.querySelector(".item4").addEventListener("mouseover", function(){
+            if (document.querySelector(".dropdown-menu"))
+            {
+                showMenu();
+            }
+        });
+
+        document.querySelector(".item4").addEventListener("mouseleave", function(){
+            if (document.querySelector(".dropdown-menu-show"))
+            {
+                hideMenu();
+            }
+        });
+
+
+        function showMenu () {
+            document.querySelector(".dropdown-menu").className = "dropdown-menu-show";
+            
+        }
+
+        function hideMenu () {
+            document.querySelector(".dropdown-menu-show").className = "dropdown-menu"
+        }
+
+        // Hamburger Icon Toggle
+
+        // Select the first element with the class 'btn'
+        var btn = document.querySelector('.btn');
+        var mobilemenu = document.querySelector('.mobile-menu');
+
+        btn.addEventListener('click', function() {
+            // Toggle the classes 'active' and 'not-active'
+            this.classList.toggle('active');
+            this.classList.toggle('not-active');
+            
+            if (this.classList.contains('active')) {
+                mobilemenu.classList.add('show-mobile-menu');
+
+            }
+
+            if (this.classList.contains('not-active')) {
+                mobilemenu.classList.remove('show-mobile-menu');
+            }
+
+
+        });
+
+        
+    </script>
+
 </body>
 </html> 
 
