@@ -6,14 +6,14 @@
     <title>3-Card-Gallery</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
+    
         section#carousel {
+            background-color: white;
             display: flex;
             justify-content: center;
             padding-top: 72px;
             padding-bottom: 72px;
-            overflow-x: scroll;
-
+            flex-wrap: wrap;
         }
         
         div.card {
@@ -22,9 +22,10 @@
             text-align: center;
             margin-left: 32px;
             margin-right: 32px;
-
+            margin-bottom: 20px;
+    
         }
-
+    
         div.card > img {
             border-radius: 20px;
         }
