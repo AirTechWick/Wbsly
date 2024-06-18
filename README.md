@@ -1,6 +1,6 @@
 # HTML CSS Components
 
-Using this as Practice to make Responsive HTML CSS Components
+Responsive HTML CSS Components
 
 Components Site: https://airtechwick.github.io/HtmlCssComponents/
 
