@@ -49,8 +49,6 @@
         .text-area {
             display: block;
         }
-
-        
     </style>
 </head>
 <body>
@@ -191,13 +189,13 @@
     </div> 
 
     <script>
-        var htmlTab = document.querySelector('.tab-html')
-        var cssTab = document.querySelector('.tab-css')
-        var jsTab = document.querySelector('.tab-js')
+        var htmlTab = document.querySelector('.tab-html');
+        var cssTab = document.querySelector('.tab-css');
+        var jsTab = document.querySelector('.tab-js');
 
-        var htmlCode = document.querySelector('.code-html')
-        var cssCode = document.querySelector('.code-css')
-        var jsCode = document.querySelector('.code-js')
+        var htmlCode = document.querySelector('.code-html');
+        var cssCode = document.querySelector('.code-css');
+        var jsCode = document.querySelector('.code-js');
 
 
         htmlTab.addEventListener("click", function(){
@@ -223,43 +221,40 @@
 
         function showAndCopyCode(tab_type){
             if (tab_type == "html"){
-                htmlCode.classList.add("code-shown")
-                htmlCode.classList.remove("code-hidden")
-                navigator.clipboard.writeText(htmlCode.textContent)
+                htmlCode.classList.add("code-shown");
+                htmlCode.classList.remove("code-hidden");
+                navigator.clipboard.writeText(htmlCode.textContent);
             }
 
             if (tab_type == "css"){
-                cssCode.classList.add("code-shown")
-                cssCode.classList.remove("code-hidden")
-                navigator.clipboard.writeText(cssCode.textContent)
+                cssCode.classList.add("code-shown");
+                cssCode.classList.remove("code-hidden");
+                navigator.clipboard.writeText(cssCode.textContent);
             }
 
             if (tab_type == "js"){
-                jsCode.classList.add("code-shown")
-                jsCode.classList.remove("code-hidden")
-                navigator.clipboard.writeText(jsCode.textContent)
+                jsCode.classList.add("code-shown");
+                jsCode.classList.remove("code-hidden");
+                navigator.clipboard.writeText(jsCode.textContent);
             }
         }
 
         function hideCode(tab_type){
             if (tab_type == "html"){
-                htmlCode.classList.add("code-hidden")
-                htmlCode.classList.remove("code-shown")
+                htmlCode.classList.add("code-hidden");
+                htmlCode.classList.remove("code-shown");
             }
 
             if (tab_type == "css"){
-                cssCode.classList.add("code-hidden")
-                cssCode.classList.remove("code-shown")
+                cssCode.classList.add("code-hidden");
+                cssCode.classList.remove("code-shown");
             }
 
             if (tab_type == "js"){
-                jsCode.classList.add("code-hidden")
-                jsCode.classList.remove("code-shown")
+                jsCode.classList.add("code-hidden");
+                jsCode.classList.remove("code-shown");
             }
         }
-
-
-
     </script>
 </body>
 </html>
