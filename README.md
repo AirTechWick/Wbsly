@@ -1,6 +1,6 @@
 # HTML CSS Components
 
-Responsive HTML CSS Components
+Responsive HTML CSS JavaScript Components
 
 Components Site: https://airtechwick.github.io/HtmlCssComponents/
 
