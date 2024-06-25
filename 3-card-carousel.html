@@ -15,6 +15,7 @@
             padding-bottom: 72px;
             flex-wrap: wrap;
             position: relative;
+            overflow: hidden;
         }
         
         div.card {
@@ -75,5 +76,62 @@
             <p>Includes consultation, shampoo & condition, scalp massage, blow-dry & curling or flat iron.</p>
         </div>
     </section>
+
+    <script>
+        let carousel = document.querySelector('#carousel');
+
+        carousel.addEventListener("click", function(event){
+
+            if (event.target.classList.contains("left-caret") || event.target.parentNode.classList.contains("left-caret")){
+                console.log("left was clicked");
+
+            }
+
+            if (event.target.classList.contains("right-caret") || event.target.parentNode.classList.contains("right-caret")){
+                console.log("right was clicked");
+                // Get the first element and transform it to the next sibling
+                const firstElement = carousel.firstElementChild;
+                const nextElement = firstElement.nextElementSibling;
+                const lastElement = carousel.lastElementChild;
+
+                const distanceToNextElement = nextElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
+                const distanceLastToFirst = lastElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
+
+                firstElement.style.transition = `transform 0.3s ease-in-out`;
+                firstElement.style.transform = `translateX(${distanceToNextElement}px)`;
+
+                nextElement.style.transition = `transform 0.3s ease-in-out`;
+                nextElement.style.transform = `translateX(${distanceToNextElement}px)`;
+
+                lastElement.style.transition = `transform 0.3s ease-in-out`;
+                lastElement.style.transform = `translateX(${distanceToNextElement}px)`;
+            }
+
+            // if (event.target.classList.contains("left-caret") || event.target.parentNode.classList.contains("left-caret")){
+            //     console.log("left was clicked");
+
+            //     const firstElement = carousel.firstElementChild;
+            //     const nextElement = firstElement.nextElementSibling;
+            //     const lastElement = carousel.lastElementChild;
+
+            //     const distanceToNextElement = nextElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
+            //     const distanceLastToFirst = lastElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
+
+            //     firstElement.style.transition = `transform 0.3s ease-in-out`;
+            //     firstElement.style.transform = `translateX(${-distanceToNextElement}px)`;
+
+            //     nextElement.style.transition = `transform 0.3s ease-in-out`;
+            //     nextElement.style.transform = `translateX(${-distanceToNextElement}px)`;
+
+            //     lastElement.style.transition = `transform 0.3s ease-in-out`;
+            //     lastElement.style.transform = `translateX(${-distanceToNextElement}px)`;
+            // }
+
+
+        })
+
+        
+
+    </script>
 </body>
 </html>
