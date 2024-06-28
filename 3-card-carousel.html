@@ -6,18 +6,31 @@
     <title>3-Card-Gallery</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-    
+
         section#carousel {
             background-color: white;
             display: flex;
-            justify-content: center;
+            flex-wrap: nowrap;
             padding-top: 72px;
             padding-bottom: 72px;
-            flex-wrap: wrap;
-            position: relative;
-            overflow: hidden;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            max-width: 700px;
+            margin: 0 auto;
         }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        section#carousel::-webkit-scrollbar {
+            display: none;
+        }
+
         
+        .carousel-wrapper {
+            position: relative;
+        }
+
         div.card {
             max-width: 296px;
             font-family: Inter;
@@ -41,97 +54,63 @@
             max-width: 30px;
         }
 
-        .left-caret {
-            position: absolute;
-            top: 50%;
-            /* move away from the left side of the card 50px */
-            left: -50px;
+        .left-caret, .right-caret {
             cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .left-caret {
+            position:absolute;
+            bottom: 0;
+            left: 35%;
         }
 
         .right-caret {
-            position: absolute;
-            top: 50%;
-            /* move away from the right side of the card 50px */
-            right: -50px; 
-            cursor: pointer;
+            position:absolute;
+            bottom: 0;
+            right: 35%;
         }
-
-
     </style>
 </head>
 <body>
+    <div class="carousel-wrapper">
     <section id="carousel">
+        <svg class="icon left-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/></svg>
         <div class="card">
-            <svg class="icon left-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/></svg>
-            <img src="https://picsum.photos/250/270"> 
+            <img alt="placeholder" src="https://picsum.photos/250/270"> 
             <h3>Haircut</h3> 
             <p>Includes a consultation, shampoo & condition, scalp massage, haircut, & blow-dry.</p>
         </div>
-        <div class="card"><img src="https://picsum.photos/251/270"> <h3>Haircolor</h3> <p>Includes consultation, color, shampoo & condition, scalp massage, & blow-dry.</p></div>
+        <div class="card"><img alt="placeholder" src="https://picsum.photos/251/270"> <h3>Haircolor</h3> <p>Includes consultation, color, shampoo & condition, scalp massage, & blow-dry.</p></div>
+        <div class="card"><img alt="placeholder" src="https://picsum.photos/251/270"> <h3>Haircolor</h3> <p>Includes consultation, color, shampoo & condition, scalp massage, & blow-dry.</p></div>
+
+        <div class="card"><img alt="placeholder" src="https://picsum.photos/251/270"> <h3>Haircolor</h3> <p>Includes consultation, color, shampoo & condition, scalp massage, & blow-dry.</p></div>
         <div class="card">
-            <svg class="icon right-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg>
-            <img src="https://picsum.photos/249/270">
+            <img alt="placeholder" src="https://picsum.photos/249/270">
             <h3>Styling</h3> 
             <p>Includes consultation, shampoo & condition, scalp massage, blow-dry & curling or flat iron.</p>
         </div>
+        <svg class="icon right-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg>
     </section>
+    </div>
 
     <script>
-        let carousel = document.querySelector('#carousel');
+        const carousel = document.querySelector('#carousel');
+        const distanceToScroll = 300;
 
         carousel.addEventListener("click", function(event){
-
             if (event.target.classList.contains("left-caret") || event.target.parentNode.classList.contains("left-caret")){
                 console.log("left was clicked");
-
+                carousel.scrollBy(-distanceToScroll, 0);
             }
 
             if (event.target.classList.contains("right-caret") || event.target.parentNode.classList.contains("right-caret")){
                 console.log("right was clicked");
-                // Get the first element and transform it to the next sibling
-                const firstElement = carousel.firstElementChild;
-                const nextElement = firstElement.nextElementSibling;
-                const lastElement = carousel.lastElementChild;
-
-                const distanceToNextElement = nextElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
-                const distanceLastToFirst = lastElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
-
-                firstElement.style.transition = `transform 0.3s ease-in-out`;
-                firstElement.style.transform = `translateX(${distanceToNextElement}px)`;
-
-                nextElement.style.transition = `transform 0.3s ease-in-out`;
-                nextElement.style.transform = `translateX(${distanceToNextElement}px)`;
-
-                lastElement.style.transition = `transform 0.3s ease-in-out`;
-                lastElement.style.transform = `translateX(${distanceToNextElement}px)`;
+                carousel.scrollBy(distanceToScroll, 0);
             }
-
-            // if (event.target.classList.contains("left-caret") || event.target.parentNode.classList.contains("left-caret")){
-            //     console.log("left was clicked");
-
-            //     const firstElement = carousel.firstElementChild;
-            //     const nextElement = firstElement.nextElementSibling;
-            //     const lastElement = carousel.lastElementChild;
-
-            //     const distanceToNextElement = nextElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
-            //     const distanceLastToFirst = lastElement.getBoundingClientRect().x - firstElement.getBoundingClientRect().x;
-
-            //     firstElement.style.transition = `transform 0.3s ease-in-out`;
-            //     firstElement.style.transform = `translateX(${-distanceToNextElement}px)`;
-
-            //     nextElement.style.transition = `transform 0.3s ease-in-out`;
-            //     nextElement.style.transform = `translateX(${-distanceToNextElement}px)`;
-
-            //     lastElement.style.transition = `transform 0.3s ease-in-out`;
-            //     lastElement.style.transform = `translateX(${-distanceToNextElement}px)`;
-            // }
-
-
-        })
-
-        
-
+        });
     </script>
+
+
 </body>
 </html>
