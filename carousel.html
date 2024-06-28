@@ -14,7 +14,8 @@
             padding-top: 72px;
             padding-bottom: 72px;
             overflow-x: scroll;
-            scroll-behavior: smooth;
+            /* Scroll behavior starts with none and then javascript turns it smooth */
+            scroll-behavior: none;
             -ms-overflow-style: none;  /* IE and Edge */
             scrollbar-width: none;  /* Firefox */
             max-width: 700px;
@@ -94,21 +95,50 @@
     </section>
     </div>
 
-    <script>
+    <script defer>
         const carousel = document.querySelector('#carousel');
         const distanceToScroll = 300;
 
         carousel.addEventListener("click", function(event){
             if (event.target.classList.contains("left-caret") || event.target.parentNode.classList.contains("left-caret")){
                 console.log("left was clicked");
-                carousel.scrollBy(-distanceToScroll, 0);
+                // Check if the scrollbar is at the leftmost position scroll to rightmost
+                if (carousel.scrollLeft === 0) {
+                    carousel.scrollTo(carousel.scrollWidth, 0);
+                }
+
+                else {
+                    carousel.scrollBy(-distanceToScroll, 0);
+                }
+                
             }
 
             if (event.target.classList.contains("right-caret") || event.target.parentNode.classList.contains("right-caret")){
                 console.log("right was clicked");
-                carousel.scrollBy(distanceToScroll, 0);
+                // Check if the scrollbar is at the rightmost position then scroll to leftmost
+                if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+                    carousel.scrollTo(0, 0);
+                } 
+
+                else {
+                    carousel.scrollBy(distanceToScroll, 0);
+                }
+
             }
         });
+
+        window.addEventListener('load', function () {
+            CarouselStartMiddle(carousel);
+        });
+
+        function CarouselStartMiddle(element) {
+            var elemWidth = element.scrollWidth;
+            var elemVisibleWidth = element.offsetWidth;
+            element.scrollLeft = (elemWidth - elemVisibleWidth) / 2;
+            // After its done loading, scroll carousel smoothly
+            element.style.scrollBehavior = 'smooth';
+        }
+
     </script>
 
 
