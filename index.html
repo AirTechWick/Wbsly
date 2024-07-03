@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-        body { font-family: Inter; background-color: black; color: white;}
+        body { font-family: Inter; background-color: #EEE5E5; color: black; margin: 0;}
 
         .parent {
             display: grid;
@@ -16,9 +16,10 @@
             grid-template-rows: repeat(7, 1fr);
             grid-column-gap: 10px;
             grid-row-gap: 10px;
+            margin-top: 100px;
         }
 
-        .parent > div { border: 3px solid white; border-radius: 10px; text-align: center; padding: 20px;}
+        .parent > div { border: 3px solid black; border-radius: 10px; text-align: center; padding: 20px;}
 
         .div1 { grid-area: 1 / 1 / 2 / 6; }
         .div2 { grid-area: 2 / 2 / 4 / 3; }
@@ -32,9 +33,113 @@
         .div10 { grid-area: 6 / 4 / 8 / 5; }
 
         #header {padding: 20px;}
+
+        /* Navigational Bar */
+
+        .navbar-k87zp8n {
+            background-color: #37392E;
+            padding: 5px;
+            font-size: 1rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) repeat(4, 0.3fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            margin: 0;
+            position:fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar-k87zp8n > li { margin: 10px; }
+
+        .item1-k87zp8n { grid-area: 1 / 1 / 2 / 3; text-align: center;}
+        .item2-k87zp8n { grid-area: 1 / 5 / 2 / 6; }
+        .item3-k87zp8n { grid-area: 1 / 6 / 2 / 7; }
+        .item4-k87zp8n { grid-area: 1 / 7 / 2 / 8; }
+        .item5-k87zp8n { grid-area: 1 / 8 / 2 / 9; }
+
+        .item2-k87zp8n, .item3-k87zp8n, .item4-k87zp8n, .item5-k87zp8n {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                position: relative;
+            }
+
+        ul { list-style-type: none; }
+
+        #menu-icon-k87zp8n { width: 1.5rem; display: none;}
+
+        #dropdown-icon-k87zp8n { width: 0.75rem; margin-left: 10px; vertical-align: bottom; }
+
+        #logo-k87zp8n {width: 4rem; }
+
+        a {text-decoration: none; border-bottom: 2px solid transparent; color: #28AFB0; transition: 0.5s; font-weight: bold;} 
+        a:hover {border-bottom: 2px solid;}
+
+        .mobile-menu-k87zp8n{
+            margin: 0;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            transform: translateX(-100%); /* Move the navbar off-screen initially */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            background-color: rgb(0, 69, 134);
+            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        }
+
+        .mobile-menu-k87zp8n > li {
+            padding: 20px;
+        }
+
+        .mobile-menu-k87zp8n > li > a {
+            color: white;
+        }
+
+        @media (max-width: 568px) {
+
+            .item2-k87zp8n, .item3-k87zp8n, .item4-k87zp8n, .item5-k87zp8n {
+                display: none;
+            }
+            
+            #menu-icon-k87zp8n { display: inline-block;  cursor: pointer;}
+
+            .show-mobile-menu-k87zp8n {
+                transform: translateX(0); /* Move the navbar into view */
+            }
+
+        }
+
+        .dropdown-menu-k87zp8n { display: none;}
+
+        .dropdown-menu-show-k87zp8n { position: absolute; left: 15%; top: 100%; background-color: #37392E; display: block; padding: 30px; line-height: 40px;}
+
+
     </style>
 </head>
-<body>
+<body>    <!-- Desktop Navigation Menu -->
+    <nav>
+        <ul class="navbar-k87zp8n">
+            <li class="item1-k87zp8n"><img id="logo-k87zp8n" src="https://img.logoipsum.com/332.svg"></li>
+            <li class="item2-k87zp8n"><a href="#">Components</a></li>
+            <li class="item3-k87zp8n"><a href="#">Examples</a></li>
+            <svg id="menu-icon-k87zp8n" class="item4-k87zp8n btn-k87zp8n not-active-k87zp8n" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </ul>
+    </nav> 
+
+    <!-- Mobile Navigation Menu -->
+    <nav>
+        <ul class="mobile-menu-k87zp8n">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pricing Info</a></li>
+        </ul>
+    </nav>
+
+
     <div class="parent">
         <h1 id="header" class="div1">Components</h1>
         <div class="div2"><a href="navbar.html" target="_blank">Navigation Bar</a></div>
@@ -47,5 +152,58 @@
         <div class="div9">Item </div>
         <div class="div10">Item</div>
     </div> 
+
+
+    <script>
+        document.querySelector(".item4-k87zp8n").addEventListener("mouseover", function(){
+            if (document.querySelector(".dropdown-menu-k87zp8n"))
+            {
+                showMenu();
+            }
+        });
+
+        document.querySelector(".item4-k87zp8n").addEventListener("mouseleave", function(){
+            if (document.querySelector(".dropdown-menu-show-k87zp8n"))
+            {
+                hideMenu();
+            }
+        });
+
+
+        function showMenu () {
+            document.querySelector(".dropdown-menu-k87zp8n").className = "dropdown-menu-show-k87zp8n";
+            
+        }
+
+        function hideMenu () {
+            document.querySelector(".dropdown-menu-show-k87zp8n").className = "dropdown-menu-k87zp8n"
+        }
+
+        // Hamburger Icon Toggle
+
+        // Select the first element with the class 'btn'
+        var btn = document.querySelector('.btn-k87zp8n');
+        var mobilemenu = document.querySelector('.mobile-menu-k87zp8n');
+
+        btn.addEventListener('click', function() {
+            // Toggle the classes 'active' and 'not-active'
+            this.classList.toggle('active-k87zp8n');
+            this.classList.toggle('not-active-k87zp8n');
+            
+            if (this.classList.contains('active-k87zp8n')) {
+                mobilemenu.classList.add('show-mobile-menu-k87zp8n');
+
+            }
+
+            if (this.classList.contains('not-active-k87zp8n')) {
+                mobilemenu.classList.remove('show-mobile-menu-k87zp8n');
+            }
+
+
+        });
+
+        
+    </script>
+
 </body>
 </html>
