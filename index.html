@@ -38,7 +38,6 @@
 
         .navbar-k87zp8n {
             background-color: #37392E;
-            padding: 5px;
             font-size: 1rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr) repeat(4, 0.3fr);
@@ -73,7 +72,7 @@
 
         #dropdown-icon-k87zp8n { width: 0.75rem; margin-left: 10px; vertical-align: bottom; }
 
-        #logo-k87zp8n {width: 4rem; }
+        #logo-k87zp8n {width: 8rem; }
 
         a {text-decoration: none; border-bottom: 2px solid transparent; color: #28AFB0; transition: 0.5s; font-weight: bold;} 
         a:hover {border-bottom: 2px solid;}
@@ -105,7 +104,7 @@
                 display: none;
             }
             
-            #menu-icon-k87zp8n { display: inline-block;  cursor: pointer;}
+            #menu-icon-k87zp8n { display: inline-block;  cursor: pointer; position: absolute; right: 40px; top: 15px; }
 
             .show-mobile-menu-k87zp8n {
                 transform: translateX(0); /* Move the navbar into view */
@@ -117,15 +116,17 @@
 
         .dropdown-menu-show-k87zp8n { position: absolute; left: 15%; top: 100%; background-color: #37392E; display: block; padding: 30px; line-height: 40px;}
 
+        .line { width: 70%; }
 
+        
     </style>
 </head>
 <body>    <!-- Desktop Navigation Menu -->
     <nav>
         <ul class="navbar-k87zp8n">
-            <li class="item1-k87zp8n"><img id="logo-k87zp8n" src="https://img.logoipsum.com/332.svg"></li>
+            <li class="item1-k87zp8n"><img id="logo-k87zp8n" src="./Wbsly-Logo/TextLogo.svg"></li>
             <li class="item2-k87zp8n"><a href="#">Components</a></li>
-            <li class="item3-k87zp8n"><a href="#">Examples</a></li>
+            <li class="item3-k87zp8n"><a target="_blank" href="https://sample-site-htmlcsscomponents.netlify.app">Examples</a></li>
             <svg id="menu-icon-k87zp8n" class="item4-k87zp8n btn-k87zp8n not-active-k87zp8n" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
         </ul>
     </nav> 
@@ -133,21 +134,25 @@
     <!-- Mobile Navigation Menu -->
     <nav>
         <ul class="mobile-menu-k87zp8n">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Pricing Info</a></li>
+            <li><a href="#">Components</a></li>
+            <li><a target="_blank" href="https://sample-site-htmlcsscomponents.netlify.app">Examples</a></li>
         </ul>
     </nav>
 
 
     <div class="parent">
-        <h1 id="header" class="div1">Components</h1>
-        <div class="div2"><a href="navbar.html" target="_blank">Navigation Bar</a></div>
+        <!-- <h1 id="header" class="div1">Components</h1> -->
+        <div class="div2">        
+            <h2>Navigation Bar</h2>
+            <a href="navbar.html" target="_blank">Live Preview &#128270;</a>
+            <hr class="line">
+            <a href="navbar-code.html" target="_blank">Code &#128187;</a>
+        </div>
         <div class="div3"><a href="hero.html" target="_blank">Hero Section</a></div>
         <div class="div4"><a href="3-card-gallery.html" target="_blank">3 Card Gallery</a></div>
         <div class="div5"><a href="card-with-tabs.html" target="_blank">Card with 3 Tabs</a></div>
         <div class="div6"><a href="carousel.html">Carousel</a></div>
-        <div class="div7">Item </div>
+        <div class="div7"><a href="split-card.html">Split Card</a> </div>
         <div class="div8">Item </div>
         <div class="div9">Item </div>
         <div class="div10">Item</div>

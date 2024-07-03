@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card with Tabs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        .card-with-tabs-da2g93c {
+            font-family: Inter;
+            border: 4px solid aqua;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            max-width: 700px;
+        }
+
+        div.tab-bar-da2g93c {
+            display: inline-flex;
+            width: 100%;
+        }
+
+        .tab-da2g93c {
+            border: 4px solid aqua;
+            text-align: center;
+            padding: 5px;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        .tab-da2g93c:hover {
+            background-color: rgba(127, 255, 212, 0.585);
+            cursor: pointer;
+        }
+
+        .code-shown-da2g93c {
+            display: inline;
+            color: greenyellow;
+        }
+
+        .code-hidden-da2g93c {
+            display: none;
+        }
+
+        .text-area-da2g93c {
+            display: block;
+            overflow: scroll;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-with-tabs-da2g93c">
+        <div class="tab-bar-da2g93c">
+            <div class="tab-da2g93c tab-html-da2g93c"> HTML </div>
+            <div class="tab-da2g93c tab-css-da2g93c"> CSS </div>
+            <div class="tab-da2g93c tab-js-da2g93c"> JavaScript </div>
+        </div>
+        <div class="text-area-da2g93c"> 
+            <pre class="code-shown-da2g93c code-html-da2g93c">
+            <code>
+              
+                &lt;!-- Desktop Navigation Menu --&gt;
+&lt;nav&gt;
+    &lt;ul class="navbar-k87zp8n"&gt;
+        &lt;li class="item1-k87zp8n"&gt;&lt;img id="logo-k87zp8n" src="https://img.logoipsum.com/332.svg"&gt;&lt;/li&gt;
+        &lt;li class="item2-k87zp8n"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="item3-k87zp8n"&gt;&lt;a href="#"&gt;About Us&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="item4-k87zp8n"&gt;&lt;a href="#"&gt;Pricing Info&lt;svg id="dropdown-icon-k87zp8n" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"&gt;&lt;!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--&gt;&lt;path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/&gt;&lt;/svg&gt;&lt;/a&gt;
+            &lt;ul class="dropdown-menu-k87zp8n"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Portfolio Item 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Priced Item 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="item5-k87zp8n"&gt;&lt;a href="#"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+        &lt;svg id="menu-icon-k87zp8n" class="item5-k87zp8n btn-k87zp8n not-active-k87zp8n" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"&gt;&lt;!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--&gt;&lt;path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/&gt;&lt;/svg&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt; 
+
+&lt;!-- Mobile Navigation Menu --&gt;
+&lt;nav&gt;
+    &lt;ul class="mobile-menu-k87zp8n"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About Us&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Pricing Info&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+
+            </code>
+            </pre>
+
+            <pre class="code-hidden-da2g93c code-css-da2g93c">
+            <code>
+                .navbar-k87zp8n {
+                    background-color: white;
+                    padding: 20px;
+                    font-size: 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr) repeat(4, 0.3fr);
+                    grid-template-rows: 1fr;
+                    grid-column-gap: 0px;
+                    grid-row-gap: 0px;
+                    margin: 0;
+                }
+        
+                .navbar-k87zp8n > li { padding-left: 20px; padding-right: 20px; }
+        
+                .item1-k87zp8n { grid-area: 1 / 1 / 2 / 3; text-align: center;}
+                .item2-k87zp8n { grid-area: 1 / 5 / 2 / 6; }
+                .item3-k87zp8n { grid-area: 1 / 6 / 2 / 7; }
+                .item4-k87zp8n { grid-area: 1 / 7 / 2 / 8; }
+                .item5-k87zp8n { grid-area: 1 / 8 / 2 / 9; }
+        
+                .item2-k87zp8n, .item3-k87zp8n, .item4-k87zp8n, .item5-k87zp8n {
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                        position: relative;
+                    }
+        
+                ul { list-style-type: none; }
+        
+                #menu-icon-k87zp8n { width: 1.5rem; display: none;}
+        
+                #dropdown-icon-k87zp8n { width: 0.75rem; margin-left: 10px; vertical-align: bottom; }
+        
+                #logo-k87zp8n {width: 4rem; }
+        
+                body { background-color: navy; margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+        
+                a {text-decoration: none; border-bottom: 2px solid transparent; color: black; transition: 0.5s;} 
+                a:hover {border-bottom: 2px solid;}
+        
+                .mobile-menu-k87zp8n{
+                    margin: 0;
+                    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                    transform: translateX(-100%); /* Move the navbar off-screen initially */
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 50vw;
+                    height: 100vh;
+                    background-color: rgb(0, 69, 134);
+                    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+                }
+        
+                .mobile-menu-k87zp8n > li {
+                    padding: 20px;
+                }
+        
+                .mobile-menu-k87zp8n > li > a {
+                    color: white;
+                }
+        
+                @media (max-width: 568px) {
+        
+                    .item2-k87zp8n, .item3-k87zp8n, .item4-k87zp8n, .item5-k87zp8n {
+                        display: none;
+                    }
+                    
+                    #menu-icon-k87zp8n { display: inline-block;  cursor: pointer;}
+        
+                    .show-mobile-menu-k87zp8n {
+                        transform: translateX(0); /* Move the navbar into view */
+                    }
+        
+                }
+        
+                .dropdown-menu-k87zp8n { display: none;}
+        
+                .dropdown-menu-show-k87zp8n { position: absolute; left: 15%; top: 100%; background-color: white; display: block; padding: 30px; line-height: 40px;}
+                                        
+            </code>
+            </pre>
+
+            <pre class="code-hidden-da2g93c code-js-da2g93c">
+            <code>
+                document.querySelector(".item4-k87zp8n").addEventListener("mouseover", function(){
+                    if (document.querySelector(".dropdown-menu-k87zp8n"))
+                    {
+                        showMenu();
+                    }
+                });
+        
+                document.querySelector(".item4-k87zp8n").addEventListener("mouseleave", function(){
+                    if (document.querySelector(".dropdown-menu-show-k87zp8n"))
+                    {
+                        hideMenu();
+                    }
+                });
+        
+        
+                function showMenu () {
+                    document.querySelector(".dropdown-menu-k87zp8n").className = "dropdown-menu-show-k87zp8n";
+                    
+                }
+        
+                function hideMenu () {
+                    document.querySelector(".dropdown-menu-show-k87zp8n").className = "dropdown-menu-k87zp8n"
+                }
+        
+                // Hamburger Icon Toggle
+        
+                // Select the first element with the class 'btn'
+                var btn = document.querySelector('.btn-k87zp8n');
+                var mobilemenu = document.querySelector('.mobile-menu-k87zp8n');
+        
+                btn.addEventListener('click', function() {
+                    // Toggle the classes 'active' and 'not-active'
+                    this.classList.toggle('active-k87zp8n');
+                    this.classList.toggle('not-active-k87zp8n');
+                    
+                    if (this.classList.contains('active-k87zp8n')) {
+                        mobilemenu.classList.add('show-mobile-menu-k87zp8n');
+        
+                    }
+        
+                    if (this.classList.contains('not-active-k87zp8n')) {
+                        mobilemenu.classList.remove('show-mobile-menu-k87zp8n');
+                    }
+        
+        
+                });
+        
+                </code>
+            </pre>
+        </div>
+    </div> 
+
+    <script>
+        var htmlTab = document.querySelector('.tab-html-da2g93c');
+        var cssTab = document.querySelector('.tab-css-da2g93c');
+        var jsTab = document.querySelector('.tab-js-da2g93c');
+
+        var htmlCode = document.querySelector('.code-html-da2g93c');
+        var cssCode = document.querySelector('.code-css-da2g93c');
+        var jsCode = document.querySelector('.code-js-da2g93c');
+
+
+        htmlTab.addEventListener("click", function(){
+            console.log("html tab");
+            showAndCopyCode("html");
+            hideCode("css");
+            hideCode("js");
+        });
+
+        cssTab.addEventListener("click", function(){
+            console.log("css tab");
+            showAndCopyCode("css");
+            hideCode("html");
+            hideCode("js");
+        });
+
+        jsTab.addEventListener("click", function(){
+            console.log("js tab");
+            showAndCopyCode("js");
+            hideCode("html");
+            hideCode("css");
+        });
+
+        function showAndCopyCode(tab_type){
+            if (tab_type == "html"){
+                htmlCode.classList.add("code-shown-da2g93c");
+                htmlCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(htmlCode.textContent);
+            }
+
+            if (tab_type == "css"){
+                cssCode.classList.add("code-shown-da2g93c");
+                cssCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(cssCode.textContent);
+            }
+
+            if (tab_type == "js"){
+                jsCode.classList.add("code-shown-da2g93c");
+                jsCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(jsCode.textContent);
+            }
+        }
+
+        function hideCode(tab_type){
+            if (tab_type == "html"){
+                htmlCode.classList.add("code-hidden-da2g93c");
+                htmlCode.classList.remove("code-shown-da2g93c");
+            }
+
+            if (tab_type == "css"){
+                cssCode.classList.add("code-hidden-da2g93c");
+                cssCode.classList.remove("code-shown-da2g93c");
+            }
+
+            if (tab_type == "js"){
+                jsCode.classList.add("code-hidden-da2g93c");
+                jsCode.classList.remove("code-shown-da2g93c");
+            }
+        }
+    </script>
+</body>
+</html>
