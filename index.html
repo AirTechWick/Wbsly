@@ -118,6 +118,50 @@
 
         .line { width: 70%; }
 
+        /* Footer */
+
+        
+        .footer-wrapper {
+            margin-top: 100px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-family: Inter, Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer > div {
+            margin-left: 30px;
+            margin-right: 30px;
+
+        }
+
+        .left-section > img {
+            width: 50px;
+        }
+
+        .right-section > ul > li {
+            list-style-type: none;
+            display: inline;
+            padding: 10px;
+        }
+
+        .icon {
+            width: 30px;
+            background-color: rgb(3, 158, 158);
+            border-radius: 20px;
+        }
+
+        .icon:hover {
+            cursor: pointer;
+            background-color: aqua;
+        }
+
         
     </style>
 </head>
@@ -146,17 +190,37 @@
             <h2>Navigation Bar</h2>
             <a href="navbar.html" target="_blank">Live Preview &#128270;</a>
             <hr class="line">
-            <a href="navbar-code.html" target="_blank">Code &#128187;</a>
+            <a href="./code-cards/navbar-code.html" target="_blank">Code &#128187;</a>
         </div>
         <div class="div3"><a href="hero.html" target="_blank">Hero Section</a></div>
         <div class="div4"><a href="3-card-gallery.html" target="_blank">3 Card Gallery</a></div>
         <div class="div5"><a href="card-with-tabs.html" target="_blank">Card with 3 Tabs</a></div>
         <div class="div6"><a href="carousel.html">Carousel</a></div>
-        <div class="div7"><a href="split-card.html">Split Card</a> </div>
-        <div class="div8">Item </div>
+        <div class="div7">            
+            <h2>Footer</h2>
+            <a href="footer.html" target="_blank">Live Preview &#128270;</a>
+            <hr class="line">
+            <a href="./code-cards/footer-code.html" target="_blank">Code &#128187;</a>
+        </div>
+        <div class="div8"><a href="split-card.html">Split Card</a> </div>
         <div class="div9">Item </div>
         <div class="div10">Item</div>
     </div> 
+
+
+    <div class="footer-wrapper">
+        <div class="footer">
+            <div class="left-section"><img src="./Wbsly-Logo/Logo.svg"></div>
+            <div class="middle-section">Made with &#128150; by Erik</div>
+            <div class="right-section">
+                <ul>
+                    <li><a href="https://github.com/AirTechWick/Wbsly" target="_blank"><img class="icon" src="./Wbsly-Logo/github.svg"></a></li>
+                    <li><a href="#" >Contact</a></li>
+                    <li><a href="#" >Credits</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
     <script>
@@ -207,7 +271,6 @@
 
         });
 
-        
     </script>
 
 </body>
