@@ -1,4 +1,4 @@
-# HTML CSS Components
+# Wbsly Components
 
 Responsive HTML CSS JavaScript Components
 
