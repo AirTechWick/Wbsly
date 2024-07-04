@@ -14,6 +14,7 @@
             background-color: black;
             color: white;
             max-width: 700px;
+            position: relative;
         }
 
         div.tab-bar-da2g93c {
@@ -48,6 +49,21 @@
             overflow: scroll;
             max-height: 500px;
         }
+
+        .copy-icon {
+            width: 30px;
+            color: white;
+            position: absolute;
+            right: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .copy-icon:hover {
+            background-color: rgba(127, 255, 212, 0.585);   
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -57,7 +73,8 @@
             <div class="tab-da2g93c tab-css-da2g93c"> CSS </div>
             <div class="tab-da2g93c tab-js-da2g93c"> JavaScript </div>
         </div>
-        <div class="text-area-da2g93c"> 
+        <div class="text-area-da2g93c">
+            <img id="copy-icon" class="copy-icon" src="copy.svg"> 
             <pre class="code-shown-da2g93c code-html-da2g93c">
             <code>
               
@@ -297,6 +314,22 @@
                 jsCode.classList.remove("code-shown-da2g93c");
             }
         }
+
+        // Copy Code
+
+        document.getElementById('copy-icon').addEventListener('click', function() {
+        var activeCodeBlock = document.querySelector('.code-shown-da2g93c');
+        if (activeCodeBlock) {
+            navigator.clipboard.writeText(activeCodeBlock.textContent.trim())
+                .then(() => {
+                    console.log('Code copied to clipboard');
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            }
+        });
+
     </script>
 </body>
 </html>
