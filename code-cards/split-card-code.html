@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Card Code</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        .card-with-tabs-da2g93c {
+            font-family: Inter;
+            border: 4px solid aqua;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            max-width: 700px;
+        }
+
+        div.tab-bar-da2g93c {
+            display: inline-flex;
+            width: 100%;
+        }
+
+        .tab-da2g93c {
+            border: 4px solid aqua;
+            text-align: center;
+            padding: 5px;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        .tab-da2g93c:hover {
+            background-color: rgba(127, 255, 212, 0.585);
+            cursor: pointer;
+        }
+
+        .code-shown-da2g93c {
+            display: inline;
+            color: greenyellow;
+        }
+
+        .code-hidden-da2g93c {
+            display: none;
+        }
+
+        .text-area-da2g93c {
+            display: block;
+            overflow: scroll;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-with-tabs-da2g93c">
+        <div class="tab-bar-da2g93c">
+            <div class="tab-da2g93c tab-html-da2g93c"> HTML </div>
+            <div class="tab-da2g93c tab-css-da2g93c"> CSS </div>
+        </div>
+        <div class="text-area-da2g93c"> 
+            <pre class="code-shown-da2g93c code-html-da2g93c">
+            <code>
+            &lt;div class="split-card"&gt;
+                &lt;h1&gt;Component 1&lt;/h1&gt;
+                &lt;p&gt;Live Preview&lt;/p&gt; 
+                &lt;hr class="line"&gt;
+                &lt;p&gt;Code&lt;/p&gt;
+            &lt;/div&gt;
+            </code>
+            </pre>
+
+            <pre class="code-hidden-da2g93c code-css-da2g93c">
+            <code>
+                div.split-card {
+                    max-width: 296px;
+                    text-align: center;
+                    margin-left: 32px;
+                    margin-right: 32px;
+                    margin-bottom: 20px;
+                    border: 2px solid black;
+                    border-radius: 20px;
+                }   
+            
+                .line {
+                    width: 70%;
+                }
+            
+                .split-card>p:hover {
+                    cursor: pointer;
+                    color: #a05e93;
+                }                                           
+            </code>
+            </pre>
+
+        </div>
+    </div> 
+
+    <script>
+        var htmlTab = document.querySelector('.tab-html-da2g93c');
+        var cssTab = document.querySelector('.tab-css-da2g93c');
+        var jsTab = document.querySelector('.tab-js-da2g93c');
+
+        var htmlCode = document.querySelector('.code-html-da2g93c');
+        var cssCode = document.querySelector('.code-css-da2g93c');
+        var jsCode = document.querySelector('.code-js-da2g93c');
+
+
+        htmlTab.addEventListener("click", function(){
+            console.log("html tab");
+            showAndCopyCode("html");
+            hideCode("css");
+            hideCode("js");
+        });
+
+        cssTab.addEventListener("click", function(){
+            console.log("css tab");
+            showAndCopyCode("css");
+            hideCode("html");
+            hideCode("js");
+        });
+
+        jsTab.addEventListener("click", function(){
+            console.log("js tab");
+            showAndCopyCode("js");
+            hideCode("html");
+            hideCode("css");
+        });
+
+        function showAndCopyCode(tab_type){
+            if (tab_type == "html"){
+                htmlCode.classList.add("code-shown-da2g93c");
+                htmlCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(htmlCode.textContent);
+            }
+
+            if (tab_type == "css"){
+                cssCode.classList.add("code-shown-da2g93c");
+                cssCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(cssCode.textContent);
+            }
+
+            if (tab_type == "js"){
+                jsCode.classList.add("code-shown-da2g93c");
+                jsCode.classList.remove("code-hidden-da2g93c");
+                navigator.clipboard.writeText(jsCode.textContent);
+            }
+        }
+
+        function hideCode(tab_type){
+            if (tab_type == "html"){
+                htmlCode.classList.add("code-hidden-da2g93c");
+                htmlCode.classList.remove("code-shown-da2g93c");
+            }
+
+            if (tab_type == "css"){
+                cssCode.classList.add("code-hidden-da2g93c");
+                cssCode.classList.remove("code-shown-da2g93c");
+            }
+
+            if (tab_type == "js"){
+                jsCode.classList.add("code-hidden-da2g93c");
+                jsCode.classList.remove("code-shown-da2g93c");
+            }
+        }
+    </script>
+</body>
+</html>

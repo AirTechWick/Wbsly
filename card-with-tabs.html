@@ -60,51 +60,65 @@
         <div class="text-area-da2g93c"> 
             <pre class="code-shown-da2g93c code-html-da2g93c">
             <code>
-                &lt;div&gt;
-                &lt;h1&gt;Hello World&lt;/h1&gt;
-                &lt;p&gt;Welcome to my website!&lt;/p&gt;
-                &lt;/div&gt;            </code>
-            </pre>
+                &lt;div class="card-with-tabs-da2g93c"&gt;
+                &lt;div class="tab-bar-da2g93c"&gt;
+                    &lt;div class="tab-da2g93c tab-html-da2g93c"&gt; HTML &lt;/div&gt;
+                    &lt;div class="tab-da2g93c tab-css-da2g93c"&gt; CSS &lt;/div&gt;
+                    &lt;div class="tab-da2g93c tab-js-da2g93c"&gt; JavaScript &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="text-area-da2g93c"&gt; 
+                    &lt;pre class="code-shown-da2g93c code-html-da2g93c"&gt;
+                    &lt;code&gt;
+                        Insert Code Here
+                    &lt;/code&gt;
+                    &lt;/pre&gt;
+            
+                    &lt;pre class="code-hidden-da2g93c code-css-da2g93c"&gt;
+                    &lt;code&gt;
+                        Insert Code Here
+                    &lt;/code&gt;
+                    &lt;/pre&gt;
+            
+                    &lt;pre class="code-hidden-da2g93c code-js-da2g93c"&gt;
+                    &lt;code&gt;
+                        Insert Code Here
+                    &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+                    </pre>
 
             <pre class="code-hidden-da2g93c code-css-da2g93c">
             <code>
                 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-                .card-tabs-da2g93c {
+                .card-with-tabs-da2g93c {
                     font-family: Inter;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(5, 1fr);
-                    grid-column-gap: 0px;
-                    grid-row-gap: 0px;
-                    max-width: 400px;
                     border: 4px solid aqua;
                     border-radius: 10px;
-                    align-items: center;
                     background-color: black;
                     color: white;
-        
+                    max-width: 700px;
                 }
         
-                .card-tabs-da2g93c > .tab-da2g93c {
+                div.tab-bar-da2g93c {
+                    display: inline-flex;
+                    width: 100%;
+                }
+        
+                .tab-da2g93c {
                     border: 4px solid aqua;
                     text-align: center;
                     padding: 5px;
                     margin-top: 20px;
+                    flex-grow: 1;
                 }
         
-                .card-tabs-da2g93c > .tab-da2g93c:hover {
-                    background-color: aquamarine;
+                .tab-da2g93c:hover {
+                    background-color: rgba(127, 255, 212, 0.585);
                     cursor: pointer;
                 }
         
-                .tab1-da2g93c { grid-area: 1 / 1 / 2 / 2; }
-                .tab2-da2g93c { grid-area: 1 / 2 / 2 / 3; }
-                .tab3-da2g93c { grid-area: 1 / 3 / 2 / 4; }
-                .text-area-da2g93c { 
-                    grid-area: 2 / 1 / 4 / 4;
-                }
-               
                 .code-shown-da2g93c {
                     display: inline;
                     color: greenyellow;
@@ -113,75 +127,86 @@
                 .code-hidden-da2g93c {
                     display: none;
                 }
-                                
+        
+                .text-area-da2g93c {
+                    display: block;
+                    overflow: scroll;
+                    max-height: 500px;
+                }
+                                        
             </code>
             </pre>
 
             <pre class="code-hidden-da2g93c code-js-da2g93c">
             <code>
-                var htmlTab = document.querySelector('.tab-html-da2g93c')
-                var cssTab = document.querySelector('.tab-css-da2g93c')
-                var jsTab = document.querySelector('.tab-js-da2g93c')
 
-                var htmlCode = document.querySelector('.code-html-da2g93c')
-                var cssCode = document.querySelector('.code-css-da2g93c')
-                var jsCode = document.querySelector('.code-js-da2g93c')
-
-
+                var htmlTab = document.querySelector('.tab-html-da2g93c');
+                var cssTab = document.querySelector('.tab-css-da2g93c');
+                var jsTab = document.querySelector('.tab-js-da2g93c');
+        
+                var htmlCode = document.querySelector('.code-html-da2g93c');
+                var cssCode = document.querySelector('.code-css-da2g93c');
+                var jsCode = document.querySelector('.code-js-da2g93c');
+        
+        
                 htmlTab.addEventListener("click", function(){
                     console.log("html tab");
-                    showCode("html");
+                    showAndCopyCode("html");
                     hideCode("css");
                     hideCode("js");
                 });
-
+        
                 cssTab.addEventListener("click", function(){
                     console.log("css tab");
-                    showCode("css");
+                    showAndCopyCode("css");
                     hideCode("html");
                     hideCode("js");
                 });
-
+        
                 jsTab.addEventListener("click", function(){
                     console.log("js tab");
-                    showCode("js");
+                    showAndCopyCode("js");
                     hideCode("html");
                     hideCode("css");
                 });
-
-                function showCode(tab_type){
+        
+                function showAndCopyCode(tab_type){
                     if (tab_type == "html"){
-                        htmlCode.classList.add("code-shown-da2g93c")
-                        htmlCode.classList.remove("code-hidden-da2g93c")
+                        htmlCode.classList.add("code-shown-da2g93c");
+                        htmlCode.classList.remove("code-hidden-da2g93c");
+                        navigator.clipboard.writeText(htmlCode.textContent);
                     }
-
+        
                     if (tab_type == "css"){
-                        cssCode.classList.add("code-shown-da2g93c")
-                        cssCode.classList.remove("code-hidden-da2g93c")
+                        cssCode.classList.add("code-shown-da2g93c");
+                        cssCode.classList.remove("code-hidden-da2g93c");
+                        navigator.clipboard.writeText(cssCode.textContent);
                     }
-
+        
                     if (tab_type == "js"){
-                        jsCode.classList.add("code-shown-da2g93c")
-                        jsCode.classList.remove("code-hidden-da2g93c")
+                        jsCode.classList.add("code-shown-da2g93c");
+                        jsCode.classList.remove("code-hidden-da2g93c");
+                        navigator.clipboard.writeText(jsCode.textContent);
                     }
                 }
-
+        
                 function hideCode(tab_type){
                     if (tab_type == "html"){
-                        htmlCode.classList.add("code-hidden-da2g93c")
-                        htmlCode.classList.remove("code-shown-da2g93c")
+                        htmlCode.classList.add("code-hidden-da2g93c");
+                        htmlCode.classList.remove("code-shown-da2g93c");
                     }
-
+        
                     if (tab_type == "css"){
-                        cssCode.classList.add("code-hidden-da2g93c")
-                        cssCode.classList.remove("code-shown-da2g93c")
+                        cssCode.classList.add("code-hidden-da2g93c");
+                        cssCode.classList.remove("code-shown-da2g93c");
                     }
-
+        
                     if (tab_type == "js"){
-                        jsCode.classList.add("code-hidden-da2g93c")
-                        jsCode.classList.remove("code-shown-da2g93c")
+                        jsCode.classList.add("code-hidden-da2g93c");
+                        jsCode.classList.remove("code-shown-da2g93c");
                     }
-                }
+                }        
+
             </code>
             </pre>
         </div>
