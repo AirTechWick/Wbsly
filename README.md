@@ -4,7 +4,7 @@
 
 Responsive Copy/Paste HTML CSS JavaScript Components
 
-Use these Free & Open Source components with any of your favorite frameworks!
+Use these Free & Open Source framework agnostic components anywhere!
 
 [Visit Wbsly](https://wbsly.com/)
 
